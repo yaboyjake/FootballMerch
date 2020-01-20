@@ -1,0 +1,62 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.28307.645
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "FootballMerch FrontEnd", "FootballMerch FrontEnd\", "{DA8CCCD3-6839-4E0F-A01C-B16AC6363BF2}"
+	ProjectSection(WebsiteProperties) = preProject
+		TargetFrameworkMoniker = ".NETFramework,Version%3Dv4.6.1"
+		Debug.AspNetCompiler.VirtualPath = "/localhost_3580"
+		Debug.AspNetCompiler.PhysicalPath = "FootballMerch FrontEnd\"
+		Debug.AspNetCompiler.TargetPath = "PrecompiledWeb\localhost_3580\"
+		Debug.AspNetCompiler.Updateable = "true"
+		Debug.AspNetCompiler.ForceOverwrite = "true"
+		Debug.AspNetCompiler.FixedNames = "false"
+		Debug.AspNetCompiler.Debug = "True"
+		Release.AspNetCompiler.VirtualPath = "/localhost_3580"
+		Release.AspNetCompiler.PhysicalPath = "FootballMerch FrontEnd\"
+		Release.AspNetCompiler.TargetPath = "PrecompiledWeb\localhost_3580\"
+		Release.AspNetCompiler.Updateable = "true"
+		Release.AspNetCompiler.ForceOverwrite = "true"
+		Release.AspNetCompiler.FixedNames = "false"
+		Release.AspNetCompiler.Debug = "False"
+		VWDPort = "3580"
+		DefaultWebSiteLanguage = "Visual C#"
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FootballMerch BackOffice", "FootballMerch BackOffice\FootballMerch BackOffice.csproj", "{1E3B4AB1-0652-4C76-A1D8-922BE9D4C4A4}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FootballMerch Classes", "FootballMerch Classes\FootballMerch Classes.csproj", "{F373E47B-400D-42BE-B112-6644B0EA7BD4}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FootballMerchTests", "FootballMerchTests\FootballMerchTests.csproj", "{A7C98F08-D663-4442-B924-2B8F664D9765}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{DA8CCCD3-6839-4E0F-A01C-B16AC6363BF2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DA8CCCD3-6839-4E0F-A01C-B16AC6363BF2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DA8CCCD3-6839-4E0F-A01C-B16AC6363BF2}.Release|Any CPU.ActiveCfg = Debug|Any CPU
+		{DA8CCCD3-6839-4E0F-A01C-B16AC6363BF2}.Release|Any CPU.Build.0 = Debug|Any CPU
+		{1E3B4AB1-0652-4C76-A1D8-922BE9D4C4A4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1E3B4AB1-0652-4C76-A1D8-922BE9D4C4A4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1E3B4AB1-0652-4C76-A1D8-922BE9D4C4A4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1E3B4AB1-0652-4C76-A1D8-922BE9D4C4A4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F373E47B-400D-42BE-B112-6644B0EA7BD4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F373E47B-400D-42BE-B112-6644B0EA7BD4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F373E47B-400D-42BE-B112-6644B0EA7BD4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F373E47B-400D-42BE-B112-6644B0EA7BD4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A7C98F08-D663-4442-B924-2B8F664D9765}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A7C98F08-D663-4442-B924-2B8F664D9765}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A7C98F08-D663-4442-B924-2B8F664D9765}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A7C98F08-D663-4442-B924-2B8F664D9765}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {149F3539-A9E7-40A1-8FD5-7FB29337A05A}
+	EndGlobalSection
+EndGlobal
