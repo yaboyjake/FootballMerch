@@ -56,7 +56,7 @@ namespace FootballMerchTests
         Assert.AreEqual(AnStock.AddressNo, TestData);
     }
 
-    [TestMethod]
+    [TestMethod
     public void StockQuantityOK()
     {
         //create an instance of the class we want to create
