@@ -8,10 +8,10 @@ namespace FootballMerchTests
         {
         }
 
-        public int ID { get; set; }
+        public int OrderID { get; set; }
         public int CustomerID { get; set; }
         public DateTime OrderDate { get; set; }
-        public Boolean HasShipped { get; set; }
-        public string Address { get; set; }
+        public string ShippingAddress { get; set; }
+        public bool OrderShipped { get; set; }
     }
 }

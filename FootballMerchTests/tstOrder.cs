@@ -19,12 +19,12 @@ namespace FootballMerchTests
         }
 
         [TestMethod]
-        public void IDPropertyOK()
+        public void OrderIDPropertyOK()
         {
             clsOrder Order = new clsOrder();
             Int32 TestData = 1;
-            Order.ID = TestData;
-            Assert.AreEqual(Order.ID, TestData);
+            Order.OrderID = TestData;
+            Assert.AreEqual(Order.OrderID, TestData);
         }
 
         [TestMethod]
@@ -52,18 +52,18 @@ namespace FootballMerchTests
         {
             clsOrder Order = new clsOrder();
             String TestData = "";
-            Order.Address = TestData;
-            Assert.AreEqual(Order.Address, TestData);
+            Order.ShippingAddress = TestData;
+            Assert.AreEqual(Order.ShippingAddress, TestData);
 
         }
 
         [TestMethod]
-        public void HasShippedPropertyOkay()
+        public void OrderShippedPropertyOkay()
         {
             clsOrder Order = new clsOrder();
-            Boolean TestData = false;
-            Order.HasShipped = TestData;
-            Assert.AreEqual(Order.HasShipped, TestData);
+            Boolean TestData = true;
+            Order.OrderShipped = TestData;
+            Assert.AreEqual(Order.OrderShipped, TestData);
 
         }
 
