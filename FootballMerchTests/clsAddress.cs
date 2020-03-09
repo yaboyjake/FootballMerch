@@ -16,5 +16,7 @@ namespace FootballMerchTests
         public string PostCode { get; internal set; }
         public string Street { get; internal set; }
         public string Town { get; internal set; }
+        public string ProductDescription { get; internal set; }
+        public string ProductDescript { get; internal set; }
     }
 }
