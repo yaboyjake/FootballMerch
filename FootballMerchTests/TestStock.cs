@@ -1,28 +1,26 @@
 ﻿using System;
-using FootballMerch_Classes;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace FootballMerchTests
 {
     [TestClass]
-    public class tstStock
+    public class TstStock
     {
         [TestMethod]
         public void InstanceOK()
         {
             //create an instance of the class we want to create
-            clsStock AnStock = new clsStock();
+            FootballMerch_Classes.ClsStock AnStock = new FootballMerch_Classes.ClsStock();
             //test to see that it exists
             Assert.IsNotNull(AnStock);
+
         }
-
-
 
         [TestMethod]
         public void ProductIDOK()
         {
             //create an instance of the class we want to create
-            clsStock AnStock = new clsStock();
+            FootballMerch_Classes.ClsStock AnStock = new FootballMerch_Classes.ClsStock();
             //create some test data to assign to the property
             int TestData = 1;
             //assign the data to the property
@@ -35,7 +33,7 @@ namespace FootballMerchTests
         public void ProductDescriptionOK()
         {
             //create an instance of the class we want to create
-            clsAddress AnStock = new clsAddress();
+            FootballMerch_Classes.ClsStock AnStock = new FootballMerch_Classes.ClsStock();
             //create some test data to assign to the property
             string TestData = "Red Football Socks";
             //assign the data to the property
@@ -48,9 +46,9 @@ namespace FootballMerchTests
         public void PriceOK()
         {
             //create an instance of the class we want to create
-            clsStock AnStock = new clsStock();
+            FootballMerch_Classes.ClsStock AnStock = new FootballMerch_Classes.ClsStock();
             //create some test data to assign to the property
-            var TestData = 1;
+            int TestData = 1;
             //assign the data to the property
             AnStock.Cost = TestData;
             //test to see that the two values are the same
@@ -61,7 +59,7 @@ namespace FootballMerchTests
         public void StockQuantityOK()
         {
             //create an instance of the class we want to create
-            clsStock AnStock = new clsStock();
+            FootballMerch_Classes.ClsStock AnStock = new FootballMerch_Classes.ClsStock();
             //create some test data to assign to the property
             Int32 TestData = 1;
             //assign the data to the property
@@ -76,7 +74,7 @@ namespace FootballMerchTests
         public void StockDateOK()
         {
             //create an instance of the class we want to create
-            clsStock AnStock = new clsStock();
+            FootballMerch_Classes.ClsStock AnStock = new FootballMerch_Classes.ClsStock();
             //create some test data to assign to the property
             DateTime TestData = DateTime.Now.Date;
             //assign the data to the property
@@ -89,7 +87,7 @@ namespace FootballMerchTests
         public void InStockOK()
         {
             //create an instance of the class we want to create
-            clsStock AnStock = new clsStock();
+            FootballMerch_Classes.ClsStock AnStock = new FootballMerch_Classes.ClsStock();
             //create some test data to assign to the property
             Boolean TestData = true;
             //assign the data to the property
