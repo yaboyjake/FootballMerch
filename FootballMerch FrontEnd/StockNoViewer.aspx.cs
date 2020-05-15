@@ -8,8 +8,6 @@ using FootballMerch_Classes;
 
 public partial class Default2 : System.Web.UI.Page
 {
-    private object txtStockNo;
-
     protected void Page_Load(object sender, EventArgs e)
     {
         //create a new instance of ClsStock
