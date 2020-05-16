@@ -1,5 +1,6 @@
 ﻿using System;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
+using FootballMerch_Classes;
 
 namespace FootballMerchTests
 {
@@ -10,7 +11,7 @@ namespace FootballMerchTests
         public void InstanceOK()
         {
             //create an instance of the class we want to create
-            FootballMerch_Classes.ClsStock AnStock = new FootballMerch_Classes.ClsStock();
+            ClsStock AnStock = new ClsStock();
             //test to see that it exists
             Assert.IsNotNull(AnStock);
 
@@ -20,7 +21,7 @@ namespace FootballMerchTests
         public void ProductIDOK()
         {
             //create an instance of the class we want to create
-            FootballMerch_Classes.ClsStock AnStock = new FootballMerch_Classes.ClsStock();
+            ClsStock AnStock = new ClsStock();
             //create some test data to assign to the property
             int TestData = 1;
             //assign the data to the property
@@ -33,9 +34,9 @@ namespace FootballMerchTests
         public void ProductDescriptionOK()
         {
             //create an instance of the class we want to create
-            FootballMerch_Classes.ClsStock AnStock = new FootballMerch_Classes.ClsStock();
+            ClsStock AnStock = new ClsStock();
             //create some test data to assign to the property
-            string TestData = "Red Football Socks";
+            string TestData = "Liverpool Shirt";
             //assign the data to the property
             AnStock.ProductDescript = TestData;
             //test to see that the two values are the same
@@ -46,7 +47,7 @@ namespace FootballMerchTests
         public void PriceOK()
         {
             //create an instance of the class we want to create
-            FootballMerch_Classes.ClsStock AnStock = new FootballMerch_Classes.ClsStock();
+            ClsStock AnStock = new ClsStock();
             //create some test data to assign to the property
             int TestData = 1;
             //assign the data to the property
@@ -59,7 +60,7 @@ namespace FootballMerchTests
         public void StockQuantityOK()
         {
             //create an instance of the class we want to create
-            FootballMerch_Classes.ClsStock AnStock = new FootballMerch_Classes.ClsStock();
+            ClsStock AnStock = new ClsStock();
             //create some test data to assign to the property
             Int32 TestData = 1;
             //assign the data to the property
@@ -74,7 +75,7 @@ namespace FootballMerchTests
         public void StockDateOK()
         {
             //create an instance of the class we want to create
-            FootballMerch_Classes.ClsStock AnStock = new FootballMerch_Classes.ClsStock();
+            ClsStock AnStock = new ClsStock();
             //create some test data to assign to the property
             DateTime TestData = DateTime.Now.Date;
             //assign the data to the property
@@ -87,7 +88,7 @@ namespace FootballMerchTests
         public void InStockOK()
         {
             //create an instance of the class we want to create
-            FootballMerch_Classes.ClsStock AnStock = new FootballMerch_Classes.ClsStock();
+            ClsStock AnStock = new ClsStock();
             //create some test data to assign to the property
             Boolean TestData = true;
             //assign the data to the property
@@ -96,5 +97,152 @@ namespace FootballMerchTests
             Assert.AreEqual(AnStock.InStck, TestData);
         }
 
+        [TestMethod]
+        public void FindMethodOK()
+        {
+            //create
+            ClsStock AnStock = new ClsStock();
+            //boolean
+            Boolean Found = false;
+            //create
+            Int32 StockNo = 1;
+            //invoke
+            Found = AnStock.Find(StockNo);
+            //test
+            Assert.IsTrue(Found);
+        }
+
+        [TestMethod]
+        public void TestStockNoFound()
+        {
+            //create an instance of the class we want to create
+            ClsStock AnStock = new ClsStock();
+            //boolean variable to store the result of the search
+            Boolean Found = false;
+            //boolean variable to record if data is OK (assume it is)
+            Boolean OK = true;
+            //create some test data to use with the method 
+            Int32 StockNo = 5;
+            //invoke the method
+            Found = AnStock.Find(StockNo);
+            //check the address no
+            if (AnStock.StockNo != 5)
+            {
+                OK = false;
+            }
+            //test to see that the result is correct
+            Assert.IsTrue(OK);
+        }
+
+
+        [TestMethod]
+        public void TestProductIDFound()
+        {
+            //create an instance of the class we want to create
+            ClsStock AnStock = new ClsStock();
+            //boolean variable to store the result of the search
+            Boolean Found = false;
+            //boolean variable to record if data is OK (assume it is)
+            Boolean OK = true;
+            //create some test data to use with the method
+            Int32 ProductNo = 5;
+            //invoke the method
+            Found = AnStock.Find(ProductNo);
+            //check the property
+            if (AnStock. != true)
+            {
+                OK = false;
+            }
+            //test to see that the result is correct
+            Assert.IsTrue(OK);
+        }
+
+        [TestMethod]
+        public void TestProductDescriptionFound()
+        {
+            //create an instance of the class we want to create
+            ClsStock AnStock = new ClsStock();
+            //boolean variable to store the result of the search
+            Boolean Found = false;
+            //boolean variable to record if data is OK (assume it is)
+            Boolean OK = true;
+            //create some test data to use with the method
+            string = ProductDescript = Liverpool Shirt;
+            //invoke the method
+            Found = AnStock.Find(ProductDescript);
+            //check the property
+            if (AnStock.ProductDescript != "Liverpool Shirt")
+            {
+                OK = false;
+            }
+            //test to see that the result is correct
+            Assert.IsTrue(OK);
+        }
+
+        [TestMethod]
+        public void TestCostFound()
+        {
+            //create an instance of the class we want to create
+            ClsStock AnStock = new ClsStock();
+            //boolean variable to store the result of the search
+            Boolean Found = false;
+            //boolean variable to record if data is OK (assume it is)
+            Boolean OK = true;
+            //create some test data to use with the method
+            int Cost = 69;
+            //invoke the method
+            Found = AnStock.Find(Cost);
+            //check the property
+            if (AnStock.Cost != 69)
+            {
+                OK = false;
+            }
+            //test to see that the result is correct
+            Assert.IsTrue(OK);
+        }
+
+        [TestMethod]
+        public void TestDateAddedFound()
+        {
+            //create an instance of the class we want to create
+            ClsStock AnStock = new ClsStock();
+            //boolean variable to store the result of the search
+            Boolean Found = false;
+            //boolean variable to record if data is OK (assume it is)
+            Boolean OK = true;
+            //create some test data to use with the method
+            Int32 StockNo = 21;
+            //invoke the method
+            Found = AnStock.Find(DateAdded);
+            //check the property
+            if (AnStock.DateAdded != Convert.ToDateTime(12/04/2020))
+            {
+                OK = false;
+            }
+            //test to see that the result is correct
+            Assert.IsTrue(OK);
+        }
+
+        [TestMethod]
+        public void TestInStockFound()
+        {
+            //create an instance of the class we want to create
+            ClsStock AnStock = new ClsStock();
+            //boolean variable to store the result of the search
+            Boolean Found = false;
+            //boolean variable to record if data is OK (assume it is)
+            Boolean OK = true;
+            //create some test data to use with the method
+            Int32 StockNo = 21;
+            //invoke the method
+            Found = AnStock.Find(InStck);
+            //check the property
+            if (AnStock.InStck != true)
+            {
+                OK = false;
+            }
+            //test to see that the result is correct
+            Assert.IsTrue(OK);
+        }
     }
 }
