@@ -56,16 +56,15 @@
                 </tr>
                 <tr>
                     <td class="auto-style3">
-                        OrderShipped</td>
+                        &nbsp;</td>
                     <td id="tableMain">
-                        <asp:TextBox ID="txtOrderShipped" runat="server"></asp:TextBox>
-                        </td>
+                        &nbsp;</td>
                     <td>&nbsp;</td>
                 </tr>
                 <tr>
                     
                     <td>
-                        <asp:CheckBox ID="chkActive" runat="server" Text="Active" />
+                        <asp:CheckBox ID="chkShipped" runat="server" Text="Order Shipped" />
                     </td>
                 </tr>
                 <tr>
@@ -79,7 +78,7 @@
        
                     
                     <td>
-                        <asp:Button ID="btnOK" runat="server" Text="OK" OnClick="btnOK_Click()" />
+                        <asp:Button ID="btnOK" runat="server" Text="OK" />
                         <asp:Button ID="btnCancel" runat="server" Text="Cancel" />
                     </td>
                 </tr>
