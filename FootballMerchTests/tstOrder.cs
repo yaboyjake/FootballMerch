@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Security.Policy;
+using FootballMerch_Classes;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
+
 
 namespace FootballMerchTests
 {
