@@ -79,7 +79,7 @@
        
                     
                     <td>
-                        <asp:Button ID="btnOK" runat="server" Text="OK" />
+                        <asp:Button ID="btnOK" runat="server" Text="OK" OnClick="btnOK_Click()" />
                         <asp:Button ID="btnCancel" runat="server" Text="Cancel" />
                     </td>
                 </tr>
@@ -88,5 +88,7 @@
         <p>
             &nbsp;</p>
     </form>
+    <p>
+        &nbsp;</p>
 </body>
 </html>
