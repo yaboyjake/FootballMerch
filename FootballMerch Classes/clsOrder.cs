@@ -17,7 +17,7 @@ namespace FootballMerch_Classes
             {
                 mOrderID = Convert.ToInt32(DB.DataTable.Rows[0]["OrderID"]);
                 mCustomerID = Convert.ToInt32(DB.DataTable.Rows[0]["CustomerID"]);
-                mShippingAddress = Convert.ToString(DB.DataTable.Rows[0]["ShipingAddress"]);
+                mShippingAddress = Convert.ToString(DB.DataTable.Rows[0]["ShippingAddress"]);
                 mOrderDate = Convert.ToDateTime(DB.DataTable.Rows[0]["OrderDate"]);
                 mOrderShipped = Convert.ToBoolean(DB.DataTable.Rows[0]["OrderShipped"]);
 
@@ -27,12 +27,7 @@ namespace FootballMerch_Classes
             {
                 return false;
             }
-            mOrderID = 20;
-            mCustomerID = 20;
-            mShippingAddress = "Test Address";
-            mOrderDate = Convert.ToDateTime("01/01/2000");
-            mOrderShipped = true;
-            return true;
+            
         }
 
         private Int32 mOrderID;

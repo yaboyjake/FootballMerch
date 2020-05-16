@@ -76,9 +76,9 @@ namespace FootballMerchTests
             clsOrder Order = new clsOrder();
             Boolean found = false;
             Boolean OK = true;
-            Int32 OrderID = 20;
+            Int32 OrderID = 2;
             found = Order.Find(OrderID);
-            if (Order.OrderID != 20)
+            if (Order.OrderID != 2)
             {
                 OK = false;
             }
@@ -91,9 +91,9 @@ namespace FootballMerchTests
             clsOrder Order = new clsOrder();
             Boolean found = false;
             Boolean OK = true;
-            Int32 CustomerID = 20;
-            found = Order.Find(CustomerID);
-            if (Order.CustomerID != 20)
+            Int32 OrderID = 3;
+            found = Order.Find(OrderID);
+            if (Order.CustomerID != 10)
             {
                 OK = false;
             }
@@ -105,9 +105,9 @@ namespace FootballMerchTests
             clsOrder Order = new clsOrder();
             Boolean found = false;
             Boolean OK = true;
-            Int32 OrderID = 20;
+            Int32 OrderID = 3;
             found = Order.Find(OrderID);
-            if (Order.ShippingAddress != "Test Address")
+            if (Order.ShippingAddress != "20 Test Road")
             {
                 OK = false;
             }
@@ -119,7 +119,7 @@ namespace FootballMerchTests
             clsOrder Order = new clsOrder();
             Boolean found = false;
             Boolean OK = true;
-            Int32 OrderID = 20;
+            Int32 OrderID = 3;
             found = Order.Find(OrderID);
             if (Order.OrderDate != Convert.ToDateTime("01/01/2000"))
             {
@@ -133,7 +133,7 @@ namespace FootballMerchTests
             clsOrder Order = new clsOrder();
             Boolean found = false;
             Boolean OK = true;
-            Int32 OrderID = 20;
+            Int32 OrderID = 3;
             found = Order.Find(OrderID);
             if (Order.OrderShipped != true)
             {
