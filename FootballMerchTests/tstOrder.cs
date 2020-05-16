@@ -12,52 +12,52 @@ namespace FootballMerchTests
         [TestMethod]
         public void InstanceOK()
         {
-            clsOrder order = new clsOrder();
-            Assert.IsNotNull(order);
+            clsOrder Order = new clsOrder();
+            Assert.IsNotNull(Order);
         }
         [TestMethod]
         public void OrderIDOK()
         {
-            clsOrder order = new clsOrder();
+            clsOrder Order = new clsOrder();
             Int32 TestData = 1;
-            order.OrderID = TestData;
-            Assert.AreEqual(order.OrderID, TestData);
+            Order.OrderID = TestData;
+            Assert.AreEqual(Order.OrderID, TestData);
         }
 
         [TestMethod]
         public void CustomerIDOK()
         {
-            clsOrder order = new clsOrder();
+            clsOrder Order = new clsOrder();
             Int32 TestData = 1;
-            order.CustomerID = TestData;
-            Assert.AreEqual(order.CustomerID, TestData);
+            Order.CustomerID = TestData;
+            Assert.AreEqual(Order.CustomerID, TestData);
         }
 
         [TestMethod]
         public void ShippingAddressOK()
         {
-            clsOrder order = new clsOrder();
+            clsOrder Order = new clsOrder();
             String TestData = "Red Road";
-            order.ShippingAddress = TestData;
-            Assert.AreEqual(order.ShippingAddress, TestData);
+            Order.ShippingAddress = TestData;
+            Assert.AreEqual(Order.ShippingAddress, TestData);
         }
 
 
         [TestMethod]
         public void OrderDateOK()
         {
-            clsOrder order = new clsOrder();
+            clsOrder Order = new clsOrder();
             DateTime TestData = DateTime.Now.Date;
-            order.OrderDate = TestData;
-            Assert.AreEqual(order.OrderDate, TestData);
+            Order.OrderDate = TestData;
+            Assert.AreEqual(Order.OrderDate, TestData);
         }
 
         [TestMethod]
         public void OrderShippedOK() {
-            clsOrder order = new clsOrder();
+            clsOrder Order = new clsOrder();
             Boolean TestData = true;
-            order.OrderShipped= TestData;
-            Assert.AreEqual(order.OrderShipped, TestData);
+            Order.OrderShipped= TestData;
+            Assert.AreEqual(Order.OrderShipped, TestData);
         }
     }
 }
