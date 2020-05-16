@@ -6,6 +6,7 @@ MinimumVisualStudioVersion = 10.0.40219.1
 Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "FootballMerch FrontEnd", "FootballMerch FrontEnd\", "{DA8CCCD3-6839-4E0F-A01C-B16AC6363BF2}"
 	ProjectSection(WebsiteProperties) = preProject
 		TargetFrameworkMoniker = ".NETFramework,Version%3Dv4.6.1"
+		ProjectReferences = "{f373e47b-400d-42be-b112-6644b0ea7bd4}|FootballMerch Classes.dll;"
 		Debug.AspNetCompiler.VirtualPath = "/localhost_3580"
 		Debug.AspNetCompiler.PhysicalPath = "FootballMerch FrontEnd\"
 		Debug.AspNetCompiler.TargetPath = "PrecompiledWeb\localhost_3580\"

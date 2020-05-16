@@ -8,11 +8,11 @@ namespace FootballMerch_Classes
         {
         }
 
-        public bool OrderShipped { get; internal set; }
-        public DateTime OrderDate { get; internal set; }
-        public int OrderID { get; internal set; }
-        public int CustomerID { get; internal set; }
-        public string ShippingAddress { get; internal set; }
+        public bool OrderShipped { get; set; }
+        public DateTime OrderDate { get; set; }
+        public int OrderID { get; set; }
+        public int CustomerID { get; set; }
+        public string ShippingAddress { get; set; }
     }
 
    

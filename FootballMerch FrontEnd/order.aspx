@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeFile="order.aspx.cs" Inherits="order" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeFile="order.aspx.cs" Inherits="order" %>>
 
 <!DOCTYPE html>
 
@@ -25,7 +25,7 @@
                 <tr>
                     <td class="auto-style2">
                         OrderID</td>
-                    <td class="auto-style1">
+                    <td class="auto-style1" id="tableMain">
                         <asp:TextBox ID="txtOrderID" runat="server"></asp:TextBox>
                     </td>
                     <td class="auto-style1"></td>
@@ -33,7 +33,7 @@
                 <tr>
                     <td class="auto-style3">
                         CustomerID</td>
-                    <td>
+                    <td id="tableMain">
                         <asp:TextBox ID="txtCustomerID" runat="server"></asp:TextBox>
                     </td>
                     <td>&nbsp;</td>
@@ -41,7 +41,7 @@
                 <tr>
                     <td class="auto-style3">
                         ShippingAddress</td>
-                    <td>
+                    <td id="tableMain">
                         <asp:TextBox ID="txtShippingAddress" runat="server"></asp:TextBox>
                     </td>
                     <td>&nbsp;</td>
@@ -49,7 +49,7 @@
                 <tr>
                     <td class="auto-style3">
                         OrderDate</td>
-                    <td>
+                    <td id="tableMain">
                         <asp:TextBox ID="txtOrderDate" runat="server"></asp:TextBox>
                     </td>
                     <td>&nbsp;</td>
@@ -57,9 +57,9 @@
                 <tr>
                     <td class="auto-style3">
                         OrderShipped</td>
-                    <td>
+                    <td id="tableMain">
                         <asp:TextBox ID="txtOrderShipped" runat="server"></asp:TextBox>
-                    </td>
+                        </td>
                     <td>&nbsp;</td>
                 </tr>
                 <tr>
@@ -90,5 +90,7 @@
     </form>
     <p>
         &nbsp;</p>
+    <p>
+                        <input id="txt1" type="text" runat="server" /></p>
 </body>
 </html>
