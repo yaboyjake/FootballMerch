@@ -9,6 +9,11 @@ namespace FootballMerchTests
     [TestClass]
     public class tstOrder
     {
+        //good test data 
+        string CustomerID = "10";
+        string ShippingAddress = "20 Test Road";
+        string OrderDate = DateTime.Now.Date.ToString();
+        string OrderShipped = "true";
         [TestMethod]
         public void InstanceOK()
         {
@@ -56,7 +61,7 @@ namespace FootballMerchTests
         public void OrderShippedOK() {
             clsOrder Order = new clsOrder();
             Boolean TestData = true;
-            Order.OrderShipped= TestData;
+            Order.OrderShipped = TestData;
             Assert.AreEqual(Order.OrderShipped, TestData);
         }
 
@@ -140,6 +145,268 @@ namespace FootballMerchTests
                 OK = false;
             }
             Assert.IsTrue(OK);
+        }
+        //Testing for valid method
+        [TestMethod]
+        public void ValidMethodOK()
+        {
+            clsOrder Order = new clsOrder();
+            String Error = "";
+            Error = Order.Valid(CustomerID, ShippingAddress, OrderDate);
+            Assert.AreEqual(Error, "");
+        }
+
+        [TestMethod]
+        public void CustomerIDMinLessOne()
+        {
+            //test if blank customer id returns error
+            clsOrder Order = new clsOrder();
+            String Error = "";
+            CustomerID = "";
+            Error = Order.Valid(CustomerID, ShippingAddress, OrderDate);
+            Assert.AreNotEqual(Error, "");
+
+        }
+
+        [TestMethod]
+        public void CustomerIDMinPlusOne()
+        {
+            //test if valid customer id passes
+            clsOrder Order = new clsOrder();
+            String Error = "";
+            CustomerID = "11";
+            Error = Order.Valid(CustomerID, ShippingAddress, OrderDate);
+            Assert.AreEqual(Error, "");
+
+        }
+
+        [TestMethod]
+        public void CustomerIDMaxLessOne()
+        {
+            //test if valid customer id passes
+            clsOrder Order = new clsOrder();
+            String Error = "";
+            CustomerID = "11111";
+            Error = Order.Valid(CustomerID, ShippingAddress, OrderDate);
+            Assert.AreEqual(Error, "");
+
+        }
+        [TestMethod]
+        public void CustomerIDMaxPlusOne()
+        {
+            //test if exeeding max customer id returns error
+            clsOrder Order = new clsOrder();
+            String Error = "";
+            CustomerID = "1111111";
+            Error = Order.Valid(CustomerID, ShippingAddress, OrderDate);
+            Assert.AreNotEqual(Error, "");
+
+        }
+
+        [TestMethod]
+        public void CustomerIDMax()
+        {
+            //test if valid customer id passes Max
+            clsOrder Order = new clsOrder();
+            String Error = "";
+            CustomerID = "111111";
+            Error = Order.Valid(CustomerID, ShippingAddress, OrderDate);
+            Assert.AreEqual(Error, "");
+
+        }
+
+        [TestMethod]
+        public void CustomerIDMid()
+        {
+            //test if valid customer id passes Mid
+            clsOrder Order = new clsOrder();
+            String Error = "";
+            CustomerID = "111";
+            Error = Order.Valid(CustomerID, ShippingAddress, OrderDate);
+            Assert.AreEqual(Error, "");
+
+        }
+
+        [TestMethod]
+        public void CustomerIDExtremeMax()
+        {
+            //test if exeeding max customer id returns error
+            clsOrder Order = new clsOrder();
+            String Error = "";
+            CustomerID = "999999999999999999999";
+            Error = Order.Valid(CustomerID, ShippingAddress, OrderDate);
+            Assert.AreNotEqual(Error, "");
+
+        }
+
+        //Test order date valid
+        [TestMethod]
+        public void OrderDateExtremeMin()
+        {
+            clsOrder Order = new clsOrder();
+            String Error = "";
+            DateTime TestDate;
+            TestDate = DateTime.Now.Date;
+            TestDate = TestDate.AddYears(-100);
+            string OrderDate = TestDate.ToString();
+            Error = Order.Valid(CustomerID, ShippingAddress, OrderDate);
+            Assert.AreNotEqual(Error, "");
+
+        }
+
+        [TestMethod]
+        public void OrderDateMinLessOne()
+        {
+            clsOrder Order = new clsOrder();
+            String Error = "";
+            DateTime TestDate;
+            TestDate = DateTime.Now.Date;
+            TestDate = TestDate.AddDays(-1);
+            string OrderDate = TestDate.ToString();
+            Error = Order.Valid(CustomerID, ShippingAddress, OrderDate);
+            Assert.AreNotEqual(Error, "");
+
+        }
+
+        [TestMethod]
+        public void OrderDateMin()
+        {
+            clsOrder Order = new clsOrder();
+            String Error = "";
+            DateTime TestDate;
+            TestDate = DateTime.Now.Date;
+            string OrderDate = TestDate.ToString();
+            Error = Order.Valid(CustomerID, ShippingAddress, OrderDate);
+            Assert.AreEqual(Error, "");
+
+        }
+
+        [TestMethod]
+        public void OrderDateMinPlusOne()
+        {
+            clsOrder Order = new clsOrder();
+            String Error = "";
+            DateTime TestDate;
+            TestDate = DateTime.Now.Date;
+            TestDate = TestDate.AddDays(1);
+            string OrderDate = TestDate.ToString();
+            Error = Order.Valid(CustomerID, ShippingAddress, OrderDate);
+            Assert.AreNotEqual(Error, "");
+
+        }
+
+        [TestMethod]
+        public void OrderDateExtremeMax()
+        {
+            clsOrder Order = new clsOrder();
+            String Error = "";
+            DateTime TestDate;
+            TestDate = DateTime.Now.Date;
+            TestDate = TestDate.AddYears(100);
+            string OrderDate = TestDate.ToString();
+            Error = Order.Valid(CustomerID, ShippingAddress, OrderDate);
+            Assert.AreNotEqual(Error, "");
+
+        }
+
+        [TestMethod]
+        public void OrderDateInvalidData()
+        {
+            clsOrder Order = new clsOrder();
+            String Error = "";
+            string OrderDate = "Not A Date Test Value!";
+            Error = Order.Valid(CustomerID, ShippingAddress, OrderDate);
+            Assert.AreNotEqual(Error, "");
+
+        }
+
+        //TEst shipping address valid
+        [TestMethod]
+        public void ShippingAddressMinLessOne()
+        {
+            //test if blank customer id returns error
+            clsOrder Order = new clsOrder();
+            String Error = "";
+            CustomerID = "";
+            Error = Order.Valid(CustomerID, ShippingAddress, OrderDate);
+            Assert.AreNotEqual(Error, "");
+
+        }
+
+        [TestMethod]
+        public void ShippingAddressMinPlusOne()
+        {
+            //test if valid customer id passes
+            clsOrder Order = new clsOrder();
+            String Error = "";
+            CustomerID = "aa";
+            Error = Order.Valid(CustomerID, ShippingAddress, OrderDate);
+            Assert.AreEqual(Error, "");
+
+        }
+
+        [TestMethod]
+        public void ShippingAddressMaxLessOne()
+        {
+            //test if valid customer id passes
+            clsOrder Order = new clsOrder();
+            String Error = "";
+            ShippingAddress = "";
+            ShippingAddress = ShippingAddress.PadRight(49, 'a');
+            Error = Order.Valid(CustomerID, ShippingAddress, OrderDate);
+            Assert.AreEqual(Error, "");
+
+        }
+        [TestMethod]
+        public void ShippingAddressMaxPlusOne()
+        {
+            //test if exeeding max customer id returns error
+            clsOrder Order = new clsOrder();
+            String Error = "";
+            ShippingAddress = "";
+            ShippingAddress = ShippingAddress.PadRight(51, 'a');
+            Error = Order.Valid(CustomerID, ShippingAddress, OrderDate);
+            Assert.AreNotEqual(Error, "");
+
+        }
+
+        [TestMethod]
+        public void ShippingAddressMax()
+        {
+            //test if valid customer id passes Max
+            clsOrder Order = new clsOrder();
+            String Error = "";
+            ShippingAddress = "";
+            ShippingAddress = ShippingAddress.PadRight(50, 'a');
+            Error = Order.Valid(CustomerID, ShippingAddress, OrderDate);
+            Assert.AreEqual(Error, "");
+
+        }
+
+        [TestMethod]
+        public void ShippingAddressMid()
+        {
+            //test if valid customer id passes Mid
+            clsOrder Order = new clsOrder();
+            String Error = "";
+            ShippingAddress = "";
+            ShippingAddress = ShippingAddress.PadRight(25, 'a');
+            Error = Order.Valid(CustomerID, ShippingAddress, OrderDate);
+            Assert.AreEqual(Error, "");
+
+        }
+
+        [TestMethod]
+        public void ShippingAddressExtremeMax()
+        {
+            //test extreme max shipping address
+            clsOrder Order = new clsOrder();
+            String Error = "";
+            ShippingAddress = "";
+            ShippingAddress = ShippingAddress.PadRight(500, 'a');
+            Error = Order.Valid(CustomerID, ShippingAddress, OrderDate);
+            Assert.AreNotEqual(Error, "");
+
         }
     }
 }

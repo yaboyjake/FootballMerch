@@ -30,6 +30,57 @@ namespace FootballMerch_Classes
             
         }
 
+        public string Valid(string customerID, string shippingAddress, string orderDate)
+        {
+            string Error = "";
+            DateTime DateTemp;
+            //Validation for customerID 
+            //If customerID is blank
+            if (customerID.Length == 0)
+            {
+                Error = Error + "Customer ID Cannot be blank\n";
+            }
+            //If customerID exceeds upper bound
+            if (customerID.Length > 6)
+            {
+                Error = Error + "Customer exeeds upper bound\n";
+            }
+
+            //validation for orderDate
+            //check if entered date is before now
+            try
+            {
+                DateTemp = Convert.ToDateTime(orderDate);
+
+
+                if (DateTemp < DateTime.Now.Date)
+                {
+                    Error = Error + "The date can not be in the past\n";
+                }
+                //check if date is in the future
+                if (DateTemp > DateTime.Now.Date)
+                {
+                    Error = Error + "The date can not be in the future\n";
+                }
+            }
+            catch
+            {
+                Error = Error + "The date is not a valid date\n";
+            }
+
+            //Validation for shipping address
+            if (shippingAddress.Length == 0)
+            {
+                Error = Error + "Shipping address Cannot be blank\n ";
+            }
+            //If customerID exceeds upper bound
+            if (shippingAddress.Length > 50)
+            {
+                Error = Error + "Shipping address too long\n ";
+            }
+            return Error;
+        }
+
         private Int32 mOrderID;
         public int OrderID
         {
@@ -93,6 +144,7 @@ namespace FootballMerch_Classes
             }
         }
 
+        
     }
 
    
