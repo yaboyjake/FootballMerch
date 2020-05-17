@@ -83,6 +83,6 @@
     <p>
         &nbsp;</p>
     <p>
-                        <input id="txt1" type="text" runat="server" /></p>
+                        &nbsp;</p>
 </body>
 </html>

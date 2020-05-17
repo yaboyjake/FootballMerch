@@ -136,7 +136,7 @@ namespace FootballMerchTests
             TestItem.OrderID = PrimaryKey;
 
             TestItem.CustomerID = 2;
-            TestItem.ShippingAddress = "AddressTest2";
+            TestItem.ShippingAddress = "AddressTest2Edited";
             TestItem.OrderDate = DateTime.Now.Date;
             TestItem.OrderShipped = false;
 
@@ -166,19 +166,20 @@ namespace FootballMerchTests
 
         }
 
+        //this test will fail if test data is deleted
         [TestMethod]
         public void ReportByShippingAddressTestDataFound()
         {
             clsOrderCollection FilteredOrders = new clsOrderCollection();
             Boolean OK = true;
-            FilteredOrders.ReportByShippingAddress("AddressTest3");
+            FilteredOrders.ReportByShippingAddress("TestData1");
             if (FilteredOrders.Count == 2)
             {
-                if (FilteredOrders.OrderList[0].OrderID != 21)
+                if (FilteredOrders.OrderList[0].OrderID != 39)
                 {
                     OK = false;
                 }
-                if (FilteredOrders.OrderList[1].OrderID != 22)
+                if (FilteredOrders.OrderList[1].OrderID != 40)
                 {
                     OK = false;
                 }

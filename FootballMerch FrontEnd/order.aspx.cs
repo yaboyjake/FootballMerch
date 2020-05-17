@@ -32,6 +32,14 @@ public partial class order : System.Web.UI.Page
         txtShippingAddress.Text = Orders.ThisOrder.ShippingAddress.ToString();
         txtOrderDate.Text = Orders.ThisOrder.OrderDate.ToString();
         chkShipped.Checked = Orders.ThisOrder.OrderShipped;
+        if (Orders.ThisOrder.OrderShipped == true)
+        {
+            lblShipped.Text = "Shipped";
+        }
+        else
+        {
+            lblShipped.Text = "Not Shipped";
+        }
 
 
     }
@@ -43,12 +51,13 @@ public partial class order : System.Web.UI.Page
         string CustomerID = txtCustomerID.Text;
         string ShippingAddress = txtShippingAddress.Text;
         string OrderDate = txtOrderDate.Text;
-
         string Error = "";
 
         Error = Order.Valid(CustomerID, ShippingAddress, OrderDate);
+        
         if (Error == "")
         {
+            Order.OrderID = OrderID;
             Order.CustomerID = Convert.ToInt32(CustomerID);
             Order.ShippingAddress = ShippingAddress;
             Order.OrderDate = Convert.ToDateTime(OrderDate);
@@ -62,16 +71,21 @@ public partial class order : System.Web.UI.Page
             //if updating an order
             else
             {
+                //order can not be shipped when added, only on update
+                Order.OrderShipped = chkShipped.Checked;
+
                 Orders.ThisOrder.Find(OrderID);
                 Orders.ThisOrder = Order;
                 Orders.Update();
+                
+                
             }
-            // Session["Order"] = Order;
-            lblError.Text = "OrderSubmitted";
+           
             Response.Redirect("orderList.aspx");
         }
         else
         {
+           
             lblError.Text = Error;
         }
         

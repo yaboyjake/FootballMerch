@@ -10,7 +10,6 @@ namespace FootballMerch_Classes
         public clsOrderCollection()
         {
             Int32 Index = 0;
-            Int32 RecordCount = 0;
             clsDataConnection DB = new clsDataConnection();
             DB.Execute("sproc_tblOrder_SelectAll");
             PopulateArray(DB);
