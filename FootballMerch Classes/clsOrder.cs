@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Linq;
 
 namespace FootballMerch_Classes
 {
@@ -27,7 +28,7 @@ namespace FootballMerch_Classes
             {
                 return false;
             }
-            
+
         }
 
         public string Valid(string customerID, string shippingAddress, string orderDate)
@@ -36,14 +37,23 @@ namespace FootballMerch_Classes
             DateTime DateTemp;
             //Validation for customerID 
             //If customerID is blank
-            if (customerID.Length == 0)
+
+            bool isNumeric = !string.IsNullOrEmpty(customerID) && customerID.All(Char.IsDigit);
+            if (isNumeric)
             {
-                Error = Error + "Customer ID Cannot be blank\n";
+                if (customerID.Length == 0)
+                {
+                    Error = Error + "Customer ID Cannot be blank\n";
+                }
+                //If customerID exceeds upper bound
+                if (customerID.Length > 6)
+                {
+                    Error = Error + "Customer exeeds upper bound\n";
+                }
             }
-            //If customerID exceeds upper bound
-            if (customerID.Length > 6)
+            else
             {
-                Error = Error + "Customer exeeds upper bound\n";
+                Error = Error + "Customer ID must be an integer\n";
             }
 
             //validation for orderDate
