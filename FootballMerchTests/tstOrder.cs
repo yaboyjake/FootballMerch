@@ -174,7 +174,7 @@ namespace FootballMerchTests
             //test if valid customer id passes
             clsOrder Order = new clsOrder();
             String Error = "";
-            CustomerID = "11";
+            CustomerID = "1";
             Error = Order.Valid(CustomerID, ShippingAddress, OrderDate);
             Assert.AreEqual(Error, "");
 
@@ -238,6 +238,32 @@ namespace FootballMerchTests
             Assert.AreNotEqual(Error, "");
 
         }
+
+        //customer ID must be an integer
+        [TestMethod]
+        public void CustomerIDInvalidDataString()
+        {
+            //test if exeeding max customer id returns error
+            clsOrder Order = new clsOrder();
+            String Error = "";
+            CustomerID = "Non integer";
+            Error = Order.Valid(CustomerID, ShippingAddress, OrderDate);
+            Assert.AreNotEqual(Error, "");
+
+        }
+
+        [TestMethod]
+        public void CustomerIDInvalidDataDecimal()
+        {
+            //test if exeeding max customer id returns error
+            clsOrder Order = new clsOrder();
+            String Error = "";
+            CustomerID = "11.1";
+            Error = Order.Valid(CustomerID, ShippingAddress, OrderDate);
+            Assert.AreNotEqual(Error, "");
+
+        }
+
 
         //Test order date valid
         [TestMethod]
@@ -339,7 +365,7 @@ namespace FootballMerchTests
             //test if valid customer id passes
             clsOrder Order = new clsOrder();
             String Error = "";
-            CustomerID = "aa";
+            ShippingAddress = "aa";
             Error = Order.Valid(CustomerID, ShippingAddress, OrderDate);
             Assert.AreEqual(Error, "");
 
