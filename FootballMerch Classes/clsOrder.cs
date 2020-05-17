@@ -46,9 +46,9 @@ namespace FootballMerch_Classes
                     Error = Error + "Customer ID Cannot be blank\n";
                 }
                 //If customerID exceeds upper bound
-                if (customerID.Length > 6)
+                if (customerID.Length > 8)
                 {
-                    Error = Error + "Customer exeeds upper bound\n";
+                    Error = Error + "Customer ID exeeds upper bound\n";
                 }
             }
             else

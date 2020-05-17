@@ -194,10 +194,11 @@ namespace FootballMerchTests
         [TestMethod]
         public void CustomerIDMaxPlusOne()
         {
-            //test if exeeding max customer id returns error
+            //test if exeeding max customer id returns 
+            //max digits for customer id is 8
             clsOrder Order = new clsOrder();
             String Error = "";
-            CustomerID = "1111111";
+            CustomerID = "111111111";
             Error = Order.Valid(CustomerID, ShippingAddress, OrderDate);
             Assert.AreNotEqual(Error, "");
 
