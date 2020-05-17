@@ -24,7 +24,7 @@ namespace FootballMerchTests
             //create an instance of the class we want to create
             ClsStock AnStock = new ClsStock();
             //create some test data to assign to the property
-            int TestData = 1;
+            Int32 TestData = 1;
             //assign the data to the property
             AnStock.ProductNo = TestData;
             //test to see that the two values are the same
@@ -50,7 +50,7 @@ namespace FootballMerchTests
             //create an instance of the class we want to create
             ClsStock AnStock = new ClsStock();
             //create some test data to assign to the property
-            int TestData = 1;
+            Int32 TestData = 1;
             //assign the data to the property
             AnStock.Cost = TestData;
             //test to see that the two values are the same

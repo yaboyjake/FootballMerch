@@ -105,15 +105,32 @@ namespace FootballMerch_Classes
 
         public bool Find(int StockNo)
         {
-            //set
-            mStockNo = 50;
-            mDateAdded = Convert.ToDateTime("16/9/2015");
-            mProductNo = 5;
-            mProductDescript = "Liverpool Shirt";
-            mCost = 69;
-            InStck = true;
-            //always return true
-            return true;
+            //create an instance of the data connection
+            clsDataConnection DB = new clsDataConnection();
+            //add the parameter for the stock number to search for
+            DB.AddParameter("@StockNo", StockNo);
+            //execute the stored procedure
+            DB.Execute("sproc_tblStock_FilterByStockNo");
+            //if one record is found (there should be either one or zero)
+            if (DB.Count == 1)
+            {
+                //copy the data from the database to the private data members
+                mStockNo = Convert.ToInt32(DB.DataTable.Rows[0]["StockNo"]);
+                mDateAdded = Convert.ToDateTime(DB.DataTable.Rows[0]["DateAdded"]);
+                mProductNo = Convert.ToInt32(DB.DataTable.Rows[0]["ProductNo"]);
+                mProductDescript = Convert.ToString(DB.DataTable.Rows[0]["ProductDescript"]);
+                mCost = Convert.ToInt32(DB.DataTable.Rows[0]["Cost"]);
+                mInStck = Convert.ToBoolean(DB.DataTable.Rows[0]["InStck"]);
+                //always return true
+                return true;
+            }
+            //if no record was found
+            else
+            {
+                //return false indicating a problem
+                return false;
+            }
+
         }
 
         public bool Find(string productDescript)
