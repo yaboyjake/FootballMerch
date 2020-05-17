@@ -8,11 +8,31 @@ using System.Web.UI.WebControls;
 
 public partial class order : System.Web.UI.Page
 {
+    Int32 OrderID;
     protected void Page_Load(object sender, EventArgs e)
     {
-       // clsOrder Order = new clsOrder();
-        //Order = (clsOrder)Session["Order"];
-        //Response.Write(Order.OrderID);
+        OrderID = Convert.ToInt32(Session["OrderID"]);
+        if (IsPostBack == false)
+        {
+            if (OrderID != -1)
+            {
+                DisplayOrder();
+            }
+        }
+        
+
+    }
+
+    void DisplayOrder()
+    {
+        clsOrderCollection Orders = new clsOrderCollection();
+        Orders.ThisOrder.Find(OrderID);
+        txtOrderID.Text = Orders.ThisOrder.OrderID.ToString();
+        txtCustomerID.Text = Orders.ThisOrder.CustomerID.ToString();
+        txtShippingAddress.Text = Orders.ThisOrder.ShippingAddress.ToString();
+        txtOrderDate.Text = Orders.ThisOrder.OrderDate.ToString();
+        chkShipped.Checked = Orders.ThisOrder.OrderShipped;
+
 
     }
 
@@ -32,9 +52,23 @@ public partial class order : System.Web.UI.Page
             Order.CustomerID = Convert.ToInt32(CustomerID);
             Order.ShippingAddress = ShippingAddress;
             Order.OrderDate = Convert.ToDateTime(OrderDate);
-            Session["Order"] = Order;
+            clsOrderCollection Orders = new clsOrderCollection();
+            //if adding a new order
+            if (OrderID == -1)
+            {
+                Orders.ThisOrder = Order;
+                Orders.Add();
+            }
+            //if updating an order
+            else
+            {
+                Orders.ThisOrder.Find(OrderID);
+                Orders.ThisOrder = Order;
+                Orders.Update();
+            }
+            // Session["Order"] = Order;
             lblError.Text = "OrderSubmitted";
-            Response.Write("orderViewer.aspx");
+            Response.Redirect("orderList.aspx");
         }
         else
         {

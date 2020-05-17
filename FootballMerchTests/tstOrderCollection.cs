@@ -23,7 +23,7 @@ namespace FootballMerchTests
 
             List<clsOrder> TestList = new List<clsOrder>();
             clsOrder TestItem = new clsOrder();
-            TestItem.OrderID = 1;
+            //TestItem.OrderID = 1;
             TestItem.CustomerID = 1;
             TestItem.ShippingAddress = "AddressTest";
             TestItem.OrderDate = DateTime.Now.Date;
@@ -41,7 +41,7 @@ namespace FootballMerchTests
         {
             clsOrderCollection AllOrders = new clsOrderCollection();
             clsOrder TestOrder = new clsOrder();
-            TestOrder.OrderID = 1;
+            //TestOrder.OrderID = 1;
             TestOrder.CustomerID = 1;
             TestOrder.ShippingAddress = "AddressTest";
             TestOrder.OrderDate = DateTime.Now.Date;
@@ -59,7 +59,7 @@ namespace FootballMerchTests
 
             List<clsOrder> TestList = new List<clsOrder>();
             clsOrder TestItem = new clsOrder();
-            TestItem.OrderID = 1;
+            //TestItem.OrderID = 1;
             TestItem.CustomerID = 1;
             TestItem.ShippingAddress = "AddressTest";
             TestItem.OrderDate = DateTime.Now.Date;
@@ -72,5 +72,122 @@ namespace FootballMerchTests
 
         }
 
+        [TestMethod]
+        public void AddMethodOK()
+        {
+            clsOrderCollection AllOrders = new clsOrderCollection();
+            clsOrder TestItem = new clsOrder();
+            Int32 PrimaryKey = 0;
+
+            //TestItem.OrderID = 1;
+            TestItem.CustomerID = 1;
+            TestItem.ShippingAddress = "AddressTest";
+            TestItem.OrderDate = DateTime.Now.Date;
+            TestItem.OrderShipped = true;
+
+            AllOrders.ThisOrder = TestItem;
+            PrimaryKey = AllOrders.Add();
+
+            AllOrders.ThisOrder.Find(PrimaryKey);
+
+            Assert.AreEqual(AllOrders.ThisOrder, TestItem);
+
+        }
+
+        [TestMethod]
+        public void DeleteMethodOK()
+        {
+            clsOrderCollection AllOrders = new clsOrderCollection();
+            clsOrder TestItem = new clsOrder();
+            Int32 PrimaryKey = 0;
+
+            //TestItem.OrderID = 1;
+            TestItem.CustomerID = 1;
+            TestItem.ShippingAddress = "AddressTest";
+            TestItem.OrderDate = DateTime.Now.Date;
+            TestItem.OrderShipped = true;
+
+            AllOrders.ThisOrder = TestItem;
+            PrimaryKey = AllOrders.Add();
+
+            AllOrders.ThisOrder.Find(PrimaryKey);
+            AllOrders.Delete();
+
+            Boolean Found = AllOrders.ThisOrder.Find(PrimaryKey);
+
+            Assert.IsFalse(Found);
+        }
+
+        [TestMethod]
+        public void UpdateMethodOK()
+        {
+            clsOrderCollection AllOrders = new clsOrderCollection();
+            clsOrder TestItem = new clsOrder();
+            Int32 PrimaryKey = 0;
+
+            TestItem.CustomerID = 1;
+            TestItem.ShippingAddress = "AddressTest";
+            TestItem.OrderDate = DateTime.Now.Date;
+            TestItem.OrderShipped = true;
+
+            AllOrders.ThisOrder = TestItem;
+            PrimaryKey = AllOrders.Add();
+
+            TestItem.OrderID = PrimaryKey;
+
+            TestItem.CustomerID = 2;
+            TestItem.ShippingAddress = "AddressTest2";
+            TestItem.OrderDate = DateTime.Now.Date;
+            TestItem.OrderShipped = false;
+
+            AllOrders.ThisOrder = TestItem;
+
+            AllOrders.Update();
+            AllOrders.ThisOrder.Find(PrimaryKey);
+
+            Assert.AreEqual(AllOrders.ThisOrder, TestItem);
+        }
+
+        [TestMethod]
+        public void ReportByShippingAddressMethodOK()
+        {
+            clsOrderCollection AllOrders = new clsOrderCollection();
+            clsOrderCollection FilteredOrders = new clsOrderCollection();
+            FilteredOrders.ReportByShippingAddress("");
+            Assert.AreEqual(AllOrders.Count, FilteredOrders.Count);
+        }
+
+        [TestMethod]
+        public void ReportByShippingAddressNoneFound()
+        {
+            clsOrderCollection FilteredOrders = new clsOrderCollection();
+            FilteredOrders.ReportByShippingAddress("xxx");
+            Assert.AreEqual(0, FilteredOrders.Count);
+
+        }
+
+        [TestMethod]
+        public void ReportByShippingAddressTestDataFound()
+        {
+            clsOrderCollection FilteredOrders = new clsOrderCollection();
+            Boolean OK = true;
+            FilteredOrders.ReportByShippingAddress("AddressTest3");
+            if (FilteredOrders.Count == 2)
+            {
+                if (FilteredOrders.OrderList[0].OrderID != 21)
+                {
+                    OK = false;
+                }
+                if (FilteredOrders.OrderList[1].OrderID != 22)
+                {
+                    OK = false;
+                }
+            }
+            else
+            {
+                OK = false;
+            }
+            Assert.IsTrue(OK);
+        }
     }
 }
