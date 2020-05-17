@@ -116,6 +116,9 @@ namespace FootballMerch_Classes
             return true;
         }
 
-
+        public bool Find(string productDescript)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

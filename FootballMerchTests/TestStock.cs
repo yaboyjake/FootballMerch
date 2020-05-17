@@ -7,6 +7,7 @@ namespace FootballMerchTests
     [TestClass]
     public class TstStock
     {
+
         [TestMethod]
         public void InstanceOK()
         {
@@ -149,7 +150,7 @@ namespace FootballMerchTests
             //invoke the method
             Found = AnStock.Find(ProductNo);
             //check the property
-            if (AnStock. != true)
+            if (AnStock.InStck != true)
             {
                 OK = false;
             }
@@ -167,7 +168,7 @@ namespace FootballMerchTests
             //boolean variable to record if data is OK (assume it is)
             Boolean OK = true;
             //create some test data to use with the method
-            string = ProductDescript = Liverpool Shirt;
+            string ProductDescript = "Liverpool Shirt";
             //invoke the method
             Found = AnStock.Find(ProductDescript);
             //check the property
@@ -211,9 +212,9 @@ namespace FootballMerchTests
             //boolean variable to record if data is OK (assume it is)
             Boolean OK = true;
             //create some test data to use with the method
-            Int32 StockNo = 21;
+            Int32 StockNo = 50;
             //invoke the method
-            Found = AnStock.Find(DateAdded);
+            Found = AnStock.Find(StockNo);
             //check the property
             if (AnStock.DateAdded != Convert.ToDateTime(12/04/2020))
             {
@@ -233,9 +234,9 @@ namespace FootballMerchTests
             //boolean variable to record if data is OK (assume it is)
             Boolean OK = true;
             //create some test data to use with the method
-            Int32 StockNo = 21;
+            Int32 StockNo = 50;
             //invoke the method
-            Found = AnStock.Find(InStck);
+            Found = AnStock.Find(StockNo);
             //check the property
             if (AnStock.InStck != true)
             {
