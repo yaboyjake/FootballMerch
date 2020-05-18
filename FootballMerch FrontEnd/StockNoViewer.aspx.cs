@@ -24,8 +24,8 @@ public partial class Default2 : System.Web.UI.Page
         //create a new instance of ClsStock
         ClsStock AnStock = new ClsStock
         {
-            //capture the stock
-            StockNo = txtStockNo.Test
+            //capture the product ID
+            ProductNo = txtProductNo.Test
         };
         //store the stock number in the session object
         Session["AnStock"] = AnStock;
