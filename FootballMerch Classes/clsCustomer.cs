@@ -6,19 +6,19 @@ namespace FootballMerch_Classes
     {
 
         //CustomerNo private member variable
-        private Int32 mCustomerNo;
+        private Int32 mCustomerID;
         //CustomerNo public property
-        public Int32 CustomerNo
+        public Int32 CustomerID
         {
             get
             {
                 //this line of code sends data out of the property
-                return mCustomerNo;
+                return mCustomerID;
             }
             set
             {
                 //this line of code allows data into the property
-                mCustomerNo = value;
+                mCustomerID = value;
             }
         }
 
@@ -169,7 +169,7 @@ namespace FootballMerch_Classes
         public bool Find(int customerNo)
         {
             //set the private data members to the test data value
-            mCustomerNo = 21;
+            mCustomerID = 21;
             mDOB = Convert.ToDateTime("10/11/1999");
             mFirstName = "augustus";
             mLastName = "gloop";

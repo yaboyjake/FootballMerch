@@ -137,16 +137,16 @@ namespace FootballMerchTests
         }
 
         [TestMethod]
-        public void CustomerNoPropertyOK()
+        public void CustomerIDPropertyOK()
         {
             //creating instance of customer class
             clsCustomer AnCustomer = new clsCustomer();
             //creating test data for customer number
             Int32 TestData = 1;
             //assigning that data to the property created
-            AnCustomer.CustomerNo = TestData;
+            AnCustomer.CustomerID = TestData;
             //test to see if the two are equal
-            Assert.AreEqual(AnCustomer.CustomerNo, TestData);
+            Assert.AreEqual(AnCustomer.CustomerID, TestData);
         }
 
 
@@ -158,9 +158,9 @@ namespace FootballMerchTests
             //boolean variable to store the result of the validation
             Boolean Found = false;
             //create some test data to use with the method
-            Int32 CustomerNo = 1;
+            Int32 CustomerID = 1;
             //invoke the method 
-            Found = AnCustomer.Find(CustomerNo);
+            Found = AnCustomer.Find(CustomerID);
             //test to see that the result is correct
             Assert.IsTrue(Found);
 
@@ -175,11 +175,11 @@ namespace FootballMerchTests
             //boolean variable to record if data is ok (assume it is)
             Boolean OK = true;
             //create some test data to use with the method
-            Int32 CustomerNo = 21;
+            Int32 CustomerID = 21;
             //invoke the method 
-            Found = AnCustomer.Find(CustomerNo);
+            Found = AnCustomer.Find(CustomerID);
             //check the customer no
-            if (AnCustomer.CustomerNo != 21)
+            if (AnCustomer.CustomerID != 21)
             {
                 OK = false;
             }
@@ -197,9 +197,9 @@ namespace FootballMerchTests
             //boolean variable to record if data is ok (assume it is)
             Boolean OK = true;
             //create some test data to use with the method
-            Int32 CustomerNo = 21;
+            Int32 CustomerID = 21;
             //invoke the method 
-            Found = AnCustomer.Find(CustomerNo);
+            Found = AnCustomer.Find(CustomerID);
             //check the customer no
             if (AnCustomer.DOB != Convert.ToDateTime("10/11/1999"))
             {
@@ -219,9 +219,9 @@ namespace FootballMerchTests
             //boolean variable to record if data is ok (assume it is)
             Boolean OK = true;
             //create some test data to use with the method
-            Int32 CustomerNo = 21;
+            Int32 CustomerID = 21;
             //invoke the method 
-            Found = AnCustomer.Find(CustomerNo);
+            Found = AnCustomer.Find(CustomerID);
             //check the property
             if (AnCustomer.FirstName != "augustus")
             {
@@ -241,9 +241,9 @@ namespace FootballMerchTests
             //boolean variable to record if data is ok (assume it is)
             Boolean OK = true;
             //create some test data to use with the method
-            Int32 CustomerNo = 21;
+            Int32 CustomerID = 21;
             //invoke the method 
-            Found = AnCustomer.Find(CustomerNo);
+            Found = AnCustomer.Find(CustomerID);
             //check the property
             if (AnCustomer.LastName != "gloop")
             {
@@ -263,9 +263,9 @@ namespace FootballMerchTests
             //boolean variable to record if data is ok (assume it is)
             Boolean OK = true;
             //create some test data to use with the method
-            Int32 CustomerNo = 21;
+            Int32 CustomerID = 21;
             //invoke the method 
-            Found = AnCustomer.Find(CustomerNo);
+            Found = AnCustomer.Find(CustomerID);
             //check the property
             if (AnCustomer.Email != "someEmail357@hotmail.com")
             {
@@ -285,9 +285,9 @@ namespace FootballMerchTests
             //boolean variable to record if data is ok (assume it is)
             Boolean OK = true;
             //create some test data to use with the method
-            Int32 CustomerNo = 21;
+            Int32 CustomerID = 21;
             //invoke the method 
-            Found = AnCustomer.Find(CustomerNo);
+            Found = AnCustomer.Find(CustomerID);
             //check the property
             if (AnCustomer.PhoneNo != 07812345678)
             {
@@ -307,9 +307,9 @@ namespace FootballMerchTests
             //boolean variable to record if data is ok (assume it is)
             Boolean OK = true;
             //create some test data to use with the method
-            Int32 CustomerNo = 21;
+            Int32 CustomerID = 21;
             //invoke the method 
-            Found = AnCustomer.Find(CustomerNo);
+            Found = AnCustomer.Find(CustomerID);
             //check the property
             if (AnCustomer.Address != "21b")
             {
@@ -329,9 +329,9 @@ namespace FootballMerchTests
             //boolean variable to record if data is ok (assume it is)
             Boolean OK = true;
             //create some test data to use with the method
-            Int32 CustomerNo = 21;
+            Int32 CustomerID = 21;
             //invoke the method 
-            Found = AnCustomer.Find(CustomerNo);
+            Found = AnCustomer.Find(CustomerID);
             //check the property
             if (AnCustomer.City != "SomeTown")
             {
@@ -351,9 +351,9 @@ namespace FootballMerchTests
             //boolean variable to record if data is ok (assume it is)
             Boolean OK = true;
             //create some test data to use with the method
-            Int32 CustomerNo = 21;
+            Int32 CustomerID = 21;
             //invoke the method 
-            Found = AnCustomer.Find(CustomerNo);
+            Found = AnCustomer.Find(CustomerID);
             //check the property
             if (AnCustomer.Postcode != "AB1 2CD")
             {
@@ -373,9 +373,9 @@ namespace FootballMerchTests
             //boolean variable to record if data is ok (assume it is)
             Boolean OK = true;
             //create some test data to use with the method
-            Int32 CustomerNo = 21;
+            Int32 CustomerID = 21;
             //invoke the method 
-            Found = AnCustomer.Find(CustomerNo);
+            Found = AnCustomer.Find(CustomerID);
             //check the property
             if (AnCustomer.IsGuest != true)
             {
