@@ -10,36 +10,36 @@
     <form id="form1" runat="server">
         <div>
             <asp:Label ID="lblFirstName" runat="server" Text="First Name: "></asp:Label>
+            <br />
             <asp:TextBox ID="txtFirstName" runat="server" OnTextChanged="txtFirstName_TextChanged" style="height: 25px"></asp:TextBox>
             <br />
-            <br />
             <asp:Label ID="lblLastName" runat="server" Text="Last Name: "></asp:Label>
+            <br />
             <asp:TextBox ID="txtLastName" runat="server" OnTextChanged="txtLastName_TextChanged"></asp:TextBox>
             <br />
-            <br />
             <asp:Label ID="lblPhoneNo" runat="server" Text="Phone Number: "></asp:Label>
+            <br />
             <asp:TextBox ID="txtPhoneNo" runat="server" OnTextChanged="txtPhoneNo_TextChanged"></asp:TextBox>
             <br />
-            <br />
             <asp:Label ID="lblEmail" runat="server" Text="Email: "></asp:Label>
+            <br />
             <asp:TextBox ID="txtEmail" runat="server" OnTextChanged="txtEmail_TextChanged"></asp:TextBox>
             <br />
-            <br />
             <asp:Label ID="lblDOB" runat="server" Text="Date Of Birth: "></asp:Label>
+            <br />
             <asp:TextBox ID="txtDOB" runat="server" OnTextChanged="txtDOB_TextChanged"></asp:TextBox>
             <br />
-            <br />
             <asp:Label ID="lblAddress" runat="server" Text="Address: "></asp:Label>
+            <br />
             <asp:TextBox ID="txtAddress" runat="server" OnTextChanged="txtAddress_TextChanged"></asp:TextBox>
             <br />
-            <br />
             <asp:Label ID="lblCity" runat="server" Text="City: "></asp:Label>
+            <br />
             <asp:TextBox ID="txtCity" runat="server" OnTextChanged="txtCity_TextChanged"></asp:TextBox>
             <br />
-            <br />
             <asp:Label ID="lblPostcode" runat="server" Text="Postcode: "></asp:Label>
-            <asp:TextBox ID="txtPostcode" runat="server" OnTextChanged="txtPostcode_TextChanged"></asp:TextBox>
             <br />
+            <asp:TextBox ID="txtPostcode" runat="server" OnTextChanged="txtPostcode_TextChanged"></asp:TextBox>
             <br />
             <asp:Label ID="LBLIsGuest" runat="server" Text="Guest account? "></asp:Label>
             <br />

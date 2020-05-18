@@ -14,8 +14,8 @@ public partial class AnCustomer : System.Web.UI.Page
         clsCustomer AnCustomer = new clsCustomer();
         //get the data from the session object
         AnCustomer = (clsCustomer)Session["AnCustomer"];
-        //display the address number for this entry
-        Response.Write(AnCustomer.Address);
+        //display the first name for this entry
+        Response.Write(AnCustomer.FirstName);
     }
 
     protected void txtFirstName_TextChanged(object sender, EventArgs e)
