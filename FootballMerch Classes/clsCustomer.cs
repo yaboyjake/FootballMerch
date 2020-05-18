@@ -5,9 +5,9 @@ namespace FootballMerch_Classes
     public class clsCustomer
     {
 
-        //CustomerNo private member variable
+        //CustomerID private member variable
         private Int32 mCustomerID;
-        //CustomerNo public property
+        //CustomerID public property
         public Int32 CustomerID
         {
             get
@@ -21,7 +21,7 @@ namespace FootballMerch_Classes
                 mCustomerID = value;
             }
         }
-
+        //DOB private member variable
         private DateTime mDOB;
         //DOB public property
         public DateTime DOB
@@ -38,8 +38,9 @@ namespace FootballMerch_Classes
             }
         }
 
+        //First name private member variable
         private string mFirstName;
-        //CustomerNo public property
+        //First name public property
         public string FirstName
         {
             get
@@ -54,8 +55,9 @@ namespace FootballMerch_Classes
             }
         }
 
+        //last name private member variable
         private string mLastName;
-        //CustomerNo public property
+        //last name public property
         public string LastName
         {
             get
@@ -70,8 +72,9 @@ namespace FootballMerch_Classes
             }
         }
 
+        //email private member variable
         private string mEmail;
-        //CustomerNo public property
+        //email public property
         public string Email
         {
             get
@@ -86,8 +89,9 @@ namespace FootballMerch_Classes
             }
         }
 
+        //phone no. private member variable
         private long mPhoneNo;
-        //CustomerNo public property
+        //phone no. public property
         public long PhoneNo
         {
             get
@@ -102,8 +106,9 @@ namespace FootballMerch_Classes
             }
         }
 
+        //address private member variable
         private string mAddress;
-        //CustomerNo public property
+        //address public property
         public string Address
         {
             get
@@ -118,8 +123,9 @@ namespace FootballMerch_Classes
             }
         }
 
+        //city private member variable
         private string mCity;
-        //CustomerNo public property
+        //city public property
         public string City
         {
             get
@@ -134,8 +140,9 @@ namespace FootballMerch_Classes
             }
         }
 
+        //postcode private member variable
         private string mPostcode;
-        //CustomerNo public property
+        //podtcode public property
         public string Postcode
         {
             get
@@ -150,8 +157,9 @@ namespace FootballMerch_Classes
             }
         }
 
+        //isGuest private member variable
         private Boolean mIsGuest;
-        //CustomerNo public property
+        //isGuest public property
         public bool IsGuest
         {
             get
@@ -168,20 +176,34 @@ namespace FootballMerch_Classes
 
         public bool Find(int customerNo)
         {
-            //set the private data members to the test data value
-            mCustomerID = 21;
-            mDOB = Convert.ToDateTime("10/11/1999");
-            mFirstName = "augustus";
-            mLastName = "gloop";
-            mEmail = "someEmail357@hotmail.com";
-            mPhoneNo = 07812345678;
-            mAddress = "21b";
-            mCity = "SomeTown";
-            mPostcode = "AB1 2CD";
-            mIsGuest = true;
-            //always return true
-            //only a quick fix doent work long term!!
-            return true;
+            //create an instance of the data connection 
+            clsDataConnection DB = new clsDataConnection();
+            //add the parameter for the customer id to search for 
+            DB.AddParameter("@CustomerID", CustomerID);
+            //execute the stored parameters
+            DB.Execute("sproc_tblCustomer_FilterByCustomerID");
+            //if one is found (there should be either one or zero!)
+            if (DB.Count == 1 )
+            {
+                mCustomerID = Convert.ToInt32(DB.DataTable.Rows[0]["CustomerID"]);
+                mDOB = Convert.ToDateTime(DB.DataTable.Rows[0]["DOB"]);
+                mFirstName = Convert.ToString(DB.DataTable.Rows[0]["FirstName"]);
+                mLastName = Convert.ToString(DB.DataTable.Rows[0]["LastName"]);
+                mEmail = Convert.ToString(DB.DataTable.Rows[0]["Email"]);
+                mPhoneNo = Convert.ToInt64(DB.DataTable.Rows[0]["PhoneNo"]);
+                mAddress = Convert.ToString(DB.DataTable.Rows[0]["Address"]);
+                mCity = Convert.ToString(DB.DataTable.Rows[0]["City"]);
+                mPostcode = Convert.ToString(DB.DataTable.Rows[0]["Postcode"]);
+                mIsGuest = Convert.ToBoolean(DB.DataTable.Rows[0]["IsGuest"]);
+                //return that everything true
+                return true;
+            }
+            //if no record was found
+            else
+            {
+                //return false indicating a prblem
+                return false;
+            }
         }
 
 
