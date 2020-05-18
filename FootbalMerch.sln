@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 15
-VisualStudioVersion = 15.0.28307.645
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30104.148
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "FootballMerch FrontEnd", "FootballMerch FrontEnd\", "{DA8CCCD3-6839-4E0F-A01C-B16AC6363BF2}"
 	ProjectSection(WebsiteProperties) = preProject
@@ -28,7 +28,7 @@ Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "FootballMerch FrontEnd", "F
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FootballMerch BackOffice", "FootballMerch BackOffice\FootballMerch BackOffice.csproj", "{1E3B4AB1-0652-4C76-A1D8-922BE9D4C4A4}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FootballMerch Classes", "FootballMerch Classes\FootballMerch Classes.csproj", "{F373E47B-400D-42BE-B112-6644B0EA7BD4}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FootballMerchClasses", "FootballMerch Classes\FootballMerchClasses.csproj", "{F373E47B-400D-42BE-B112-6644B0EA7BD4}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FootballMerchTests", "FootballMerchTests\FootballMerchTests.csproj", "{A7C98F08-D663-4442-B924-2B8F664D9765}"
 EndProject

@@ -46,22 +46,23 @@
       <HintPath>..\packages\MSTest.TestFramework.1.3.2\lib\net45\Microsoft.VisualStudio.TestPlatform.TestFramework.Extensions.dll</HintPath>
     </Reference>
     <Reference Include="System" />
-    <Reference Include="System.Configuration" />
     <Reference Include="System.Core" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="TestStock.cs" />
+    <Compile Include="clsCustomer.cs" />
+    <Compile Include="tstCustomer.cs" />
+    <Compile Include="tstOrder.cs" />
     <Compile Include="UnitTest1.cs" />
-    <Compile Include="TestStockCollection.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="tstOrderCollection.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\FootballMerch Classes\FootballMerch Classes.csproj">
+    <ProjectReference Include="..\FootballMerch Classes\FootballMerchClasses.csproj">
       <Project>{F373E47B-400D-42BE-B112-6644B0EA7BD4}</Project>
-      <Name>FootballMerch Classes</Name>
+      <Name>FootballMerchClasses</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(VSToolsPath)\TeamTest\Microsoft.TestTools.targets" Condition="Exists('$(VSToolsPath)\TeamTest\Microsoft.TestTools.targets')" />
