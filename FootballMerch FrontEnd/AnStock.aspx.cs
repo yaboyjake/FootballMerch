@@ -7,6 +7,7 @@ using System.Web.UI.WebControls;
 using FootballMerch_Classes;
 
 
+
 public partial class AnStock : System.Web.UI.Page
 {
     //variable to store the primary key with page level scope
