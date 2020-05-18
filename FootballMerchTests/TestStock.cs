@@ -666,7 +666,7 @@ namespace FootballMerchTests
             //invoke the method
             Error = AnStock.Valid(ProductDescript, Cost, StockNo, DateAdded);
             //test to see that the result is correct
-            Assert.AreEqual(Error, "");
+            Assert.AreEqual(Error, ""); 
         }
 
         [TestMethod]
