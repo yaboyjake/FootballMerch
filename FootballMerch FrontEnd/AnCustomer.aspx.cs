@@ -72,7 +72,7 @@ public partial class AnCustomer : System.Web.UI.Page
         //capture second name
         AnCustomer.LastName = txtLastName.Text;
         //capture phone number
-        AnCustomer.PhoneNo = Convert.ToInt16(txtPhoneNo.Text);
+        AnCustomer.PhoneNo = Convert.ToInt64(txtPhoneNo.Text);
         //capture the email
         AnCustomer.Email = txtEmail.Text;
         //capture the DOB

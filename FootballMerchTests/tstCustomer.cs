@@ -103,7 +103,7 @@ namespace FootballMerchTests
             //create an instance of the class we want to create
             clsCustomer AnCustomer = new clsCustomer();
             //create some test data to assign to the property
-            string TestData = "21 banff avenue";
+            string TestData = "21b";
             //assign the data to the property
             AnCustomer.Address = TestData;
             //test to see that the two values are the same
